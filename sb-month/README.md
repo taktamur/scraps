@@ -14,3 +14,4 @@ Cloudflare workers で、Cosense で使う月次ページを生成する実験
 - `wrangler login` でログイン
 - `yarn deploy`で push
 - https://dash.cloudflare.com/ の cloudflare のコンソールで確認
+- https://cosense-month-page.taktamur.workers.dev/ に push される

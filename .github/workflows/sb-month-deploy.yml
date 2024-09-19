@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - "sb-month/**"
+    paths:
+      - "sb-month/**"
+      - ".github/workflows/sb-month-*.yml"
 
 jobs:
   deploy:

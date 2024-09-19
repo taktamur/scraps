@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - "sb-month/**"
+    paths:
+      - "sb-month/**"
 
 jobs:
   deploy:
@@ -16,10 +16,6 @@ jobs:
         working-directory: ./sb-month
     steps:
       - uses: actions/checkout@v4
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: "20"
       - name: Install dependencies
         run: yarn install
       - name: test

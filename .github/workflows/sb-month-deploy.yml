@@ -11,10 +11,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
+    defaults:
+      run:
+        working-directory: ./sb-month
     steps:
       - uses: actions/checkout@v4
+      - name: test
+        run: yarn test-no-watch
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: "sb-month"

@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "sb-month/**"
+    # paths:
+    #   - "sb-month/**"
 
 jobs:
   deploy:

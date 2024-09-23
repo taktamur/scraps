@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    // pdfsを削除して作り直す
+    "clean": "rm -rf pdfs && mkdir pdfs",
+    // paths.txtを読み込み、各URLをスクレイピングしてpdfにする
+    "run": "cat paths-cloudflare-workers.txt | PUPPETEER_PRODUCT=chrome deno run --allow-env --allow-write --allow-read --allow-run --allow-net url2pdf.ts https://developers.cloudflare.com/workers/",
+    "run_pages": "cat urls-cloudflare-pages.txt | PUPPETEER_PRODUCT=chrome deno run --allow-env --allow-write --allow-read --allow-run --allow-net url2pdf.ts",
+    // 作成したpdfを結合する
+    "combine": "pdftk pdfs/*.pdf cat output cloudflare-pages.pdf",
+    // 指定されたsitemap.xmlをcurlで取得し、xml2jsonを使ってxmlをjsonに変換して、jqでURLを抽出する
+    "sitemap2urls": "curl -s https://developers.cloudflare.com/sitemap-0.xml > sitemap.xml; xml2json sitemap.xml | jq '.urlset.url[].loc' -r > sitemap-url.txt"
+  }
+}

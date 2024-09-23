@@ -1,2 +1,5 @@
 *.pdf
 *.lock
+.DS_Store
+*.txt
+*.json

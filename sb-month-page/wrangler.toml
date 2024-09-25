@@ -1,0 +1,10 @@
+# wrangler.toml
+name = "sb-month-page"
+main = "src/index.ts"
+compatibility_date = "2024-09-09"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+workers_dev = false
+zone_id = "your_zone_id"
+route = "https://yourdomain.com/*"

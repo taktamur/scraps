@@ -2,4 +2,4 @@
 
 ## 概要
 
-Cloudflare Page + Hono で、Cosense(Scrapbox) で使う月次ページを生成する実験
+Cloudflare Page + Hono で、Cosense(Scrapbox) で使う月次ページを生成する実験。

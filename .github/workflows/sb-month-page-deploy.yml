@@ -1,0 +1,27 @@
+name: Deploy to Cloudflare workers
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "sb-month-page/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    defaults:
+      run:
+        working-directory: ./sb-month-page
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: yarn install
+      - name: test
+        run: yarn test-no-watch
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: "sb-month-page"

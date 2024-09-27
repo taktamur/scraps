@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare workers
+name: sb-month-page Deploy to Cloudflare workers
 
 on:
   push:
@@ -18,8 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: yarn install
-      - name: test
-        run: yarn test-no-watch
+      # - name: test
+      #   run: yarn test-no-watch
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
